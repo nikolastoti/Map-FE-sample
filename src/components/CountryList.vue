@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       filteredCountries: [],
+      countriesData: [],
     };
   },
   components: {
@@ -33,10 +34,10 @@ export default {
       axios
         .get("https://restcountries.com/v3.1/all")
         .then((response) => {
-          this.countries = response.data;
+          this.countriesData = response.data;
           this.allCountries = response.data;
           this.$emit("update:countries", {
-            filtered: this.countries,
+            filtered: this.countriesData,
             all: this.allCountries,
           });
         })
