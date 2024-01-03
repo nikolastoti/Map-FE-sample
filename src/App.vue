@@ -1,28 +1,69 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Controls
+      :filteredCountries="filteredCountries"
+      @search-updated="updateSearch"
+      @sort-name="sortCountriesByName"
+      @sort-population="sortCountriesByPopulation"
+    />
+    <CountryList
+      :countries="filteredCountries"
+      @update:countries="updateCountries"
+    />
+    <Map :countries="filteredCountries" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Controls from "./components/Controls";
+import CountryList from "./components/CountryList";
+import Map from "./components/Map";
+import "./assets/style.css";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Controls,
+    CountryList,
+    Map,
+  },
+  data() {
+    return {
+      countries: [],
+      allCountries: [],
+      search: "",
+    };
+  },
+  computed: {
+    filteredCountries() {
+      const filtered = this.countries.filter((country) =>
+        country.name.common.toLowerCase().includes(this.search.toLowerCase())
+      );
+      return filtered;
+    },
+  },
+  methods: {
+    updateSearch(newSearch) {
+      this.search = newSearch;
+    },
+    updateCountries({ filtered, all }) {
+      this.countries = filtered;
+      this.allCountries = all;
+    },
+    sortCountriesByName(isAscendingName) {
+      this.countries.sort((a, b) =>
+        isAscendingName
+          ? a.name.common.localeCompare(b.name.common)
+          : b.name.common.localeCompare(a.name.common)
+      );
+    },
+    sortCountriesByPopulation(isAscendingPopulation) {
+      this.countries.sort((a, b) =>
+        isAscendingPopulation
+          ? a.population - b.population
+          : b.population - a.population
+      );
+    },
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

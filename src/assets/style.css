@@ -1,0 +1,156 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #29333c;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+#logo {
+  width: 50px;
+  border-radius: 50px;
+  margin-right: 20px;
+  box-shadow: 0px 5px 10px black;
+}
+
+.controls {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px;
+}
+
+.grid {
+  margin-top: 68px;
+  height: 92%;
+  overflow-y: auto;
+  padding-right: 10px;
+  min-width: 240px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  background-color: #29333c;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #bacdd8;
+  padding: 8px;
+  border-radius: 12px;
+  width: 200px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+#map {
+  height: 97vh;
+  width: 89vw;
+  margin-top: 68px;
+}
+
+.marker {
+  background-color: #ff5349;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+.capital,
+.population,
+.borders {
+  font-size: 14px;
+  color: #7f8c9b;
+}
+
+button,
+.average-population {
+  border: 2px solid #ff5349;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #39414d;
+  background-color: white;
+  display: block;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+button {
+  cursor: pointer;
+}
+
+.controls button,
+.average-population {
+  margin-left: 20px;
+}
+
+.average-population {
+  position: absolute;
+  top: 100px;
+  right: 80px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 20px black;
+}
+
+.focusBtn {
+  margin: 10px auto;
+}
+
+button:focus,
+button:hover {
+  background-color: #ff5349;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 11px 15px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-input:focus {
+  border-color: #ff5349;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.sort-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5349;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sort-button:hover {
+  background-color: #ff5349;
+}
