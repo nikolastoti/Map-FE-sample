@@ -9,7 +9,7 @@ Feature Specs
 Map
 
     - A marker is visible for each country
-    //TODO When focusing on a country / marker, url is updated
+    - When focusing on a country / marker, url is updated
     - vessels tracks are displayed on the map
 
 Controls
@@ -33,12 +33,18 @@ npm install
 
 ### Compiles and hot-reloads for development
 
+```
 npm run serve
+```
 
 ### Compiles and minifies for production
 
+```
 npm run build
+```
 
 ### Lints and fixes files
 
+```
 npm run lint
+```
