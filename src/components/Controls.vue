@@ -1,8 +1,5 @@
 <template>
   <div class="controls">
-    <a href="https://www.kpler.com/" target="_blank">
-      <img id="logo" src="../../public/logo.png" />
-    </a>
     <input
       v-model="search"
       type="text"

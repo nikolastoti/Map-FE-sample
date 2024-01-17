@@ -1,4 +1,4 @@
-# Kpler-map
+# Test-map
 
 Feature Specs
 
@@ -18,12 +18,6 @@ Controls
     - The user can sort countries by alphabetical order or by population
     - The average population is always computed at the top right corner of the map based on the filtered list
     - Average population and markers displayed on the map are updated when list of countries is updated
-
-Bonus
-
-    - The map of each country appears on their card
-    - The logo of Kpler was added on the top left leading to the main homepage of Kpler
-    - The color scheme is the same as in kpler.com
 
 ## Project setup
 
